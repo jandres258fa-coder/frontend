@@ -33,7 +33,7 @@ export default function Page() {
 
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:4000/api/login", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ correo, password }),
